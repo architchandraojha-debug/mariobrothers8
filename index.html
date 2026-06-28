@@ -9,22 +9,36 @@
       background: #f4f4f4;
       margin: 0;
       padding: 0;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
       background: #333;
       color: #fff;
       padding: 20px;
       margin: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 2em;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      width: 100%;
     }
     .section {
-      margin: 30px auto;
+      margin: 20px;
       padding: 20px;
       border: 1px solid #ccc;
       background: #fff;
       width: 60%;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-align: center;
     }
     input {
       padding: 10px;
@@ -37,8 +51,11 @@
     }
     iframe {
       width: 100%;
-      height: 800px;
+      height: 500px;
       border: none;
+    }
+    .hidden {
+      display: none;
     }
   </style>
 </head>
@@ -46,18 +63,29 @@
   <!-- Top Heading -->
   <h1>WELCOME TO MARIO BROTHERS</h1>
 
-  <!-- Join Form Section -->
-  <div class="section">
-    <h2>Join Form</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header"></iframe>
-  </div>
+  <!-- Centered Container -->
+  <div class="container">
+    <!-- Join Form Section -->
+    <div class="section">
+      <h2>Join Form</h2>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header"></iframe>
+    </div>
 
-  <!-- PIN Section -->
-  <div class="section">
-    <h2>Enter PIN to Access</h2>
-    <input type="password" id="pin-input" placeholder="Enter PIN">
-    <button onclick="checkPin()">Submit</button>
-    <p id="pin-message"></p>
+    <!-- PIN Section -->
+    <div class="section">
+      <h2>Enter PIN to Access</h2>
+      <input type="password" id="pin-input" placeholder="Enter PIN">
+      <button onclick="checkPin()">Submit</button>
+      <p id="pin-message"></p>
+    </div>
+
+    <!-- Notice Board Section (hidden until PIN is correct) -->
+    <div class="section hidden" id="notice-board">
+      <h2>Group Notice Board</h2>
+      <p><strong>Admin Notice 1:</strong> Welcome new members! 🎉</p>
+      <p><strong>Admin Notice 2:</strong> First group meetup on Saturday!</p>
+      <p><strong>Admin Notice 3:</strong> Don’t forget to bring your ideas.</p>
+    </div>
   </div>
 
   <script>
@@ -65,13 +93,11 @@
       const pin = document.getElementById("pin-input").value;
       const message = document.getElementById("pin-message");
 
-      // ✅ Add your valid PINs here
-      const validPins = ["TECHNOLOGIA"];
+      const validPins = ["TECHNOLOGIA"]; // ✅ Add your PINs here
 
       if (validPins.includes(pin)) {
-        message.textContent = "Access granted! Redirecting...";
-        // Redirect to your actual site URL
-        window.location.href = "https://architchandraojha-debug.github.io/mariobrothers8/notice.html";
+        message.textContent = "Access granted!";
+        document.getElementById("notice-board").classList.remove("hidden");
       } else {
         message.textContent = "Incorrect PIN. Try again.";
       }
