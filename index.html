@@ -2,22 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>MARIO BROTHERS</title>
+  <title>Mario Brothers Group Site</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
     .section {
-      margin: 20px;
-      padding: 10px;
+      margin: 30px auto;
+      padding: 20px;
       border: 1px solid #ccc;
+      background: #fff;
+      width: 60%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
     }
   </style>
 </head>
 <body>
+  <!-- Top Heading -->
+  <h1>WELCOME TO MARIO BROTHERS</h1>
+
   <!-- Join Form Section -->
   <div class="section">
     <h2>Join Form</h2>
-    <!-- Embed your Google Form here -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header" 
-            width="640" height="800" frameborder="0"></iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header"></iframe>
   </div>
 
   <!-- PIN Section -->
@@ -34,12 +66,12 @@
       const message = document.getElementById("pin-message");
 
       // ✅ Add your valid PINs here
-      const validPins = ["TECHNOLOGIA", "1234"];
+      const validPins = ["TECHNOLOGIA"];
 
       if (validPins.includes(pin)) {
         message.textContent = "Access granted! Redirecting...";
-        // Redirect to another page (change URL as needed)
-        window.location.href = "notice.html";
+        // Redirect to your actual site URL
+        window.location.href = "https://architchandraojha-debug.github.io/mariobrothers8/notice.html";
       } else {
         message.textContent = "Incorrect PIN. Try again.";
       }
