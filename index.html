@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Group Website</title>
+  <title>MARIO BROTHERS</title>
   <style>
     .section {
       margin: 20px;
@@ -15,25 +15,35 @@
   <!-- Join Form Section -->
   <div class="section">
     <h2>Join Form</h2>
-    <!-- Use the responder link from Google Forms here -->
-    <iframe src=https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header 
+    <!-- Embed your Google Form here -->
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header" 
             width="640" height="800" frameborder="0"></iframe>
   </div>
 
   <!-- PIN Section -->
   <div class="section">
     <h2>Enter PIN to Access</h2>
-    <form>
-      <input type="password" name="pin" placeholder="Enter PIN">
-      <input type="submit" value="Submit">
-    </form>
-    <p>(This PIN field is just visual in HTML‑only mode — it won’t be disturbed by the form.)</p>
+    <input type="password" id="pin-input" placeholder="Enter PIN">
+    <button onclick="checkPin()">Submit</button>
+    <p id="pin-message"></p>
   </div>
 
-  <!-- Notice Board Section -->
-  <div class="section">
-    <h2>Notice Board</h2>
-    <p>Welcome to the group! 🎉</p>
-  </div>
+  <script>
+    function checkPin() {
+      const pin = document.getElementById("pin-input").value;
+      const message = document.getElementById("pin-message");
+
+      // ✅ Add your valid PINs here
+      const validPins = ["TECHNOLOGIA", "1234"];
+
+      if (validPins.includes(pin)) {
+        message.textContent = "Access granted! Redirecting...";
+        // Redirect to another page (change URL as needed)
+        window.location.href = "notice.html";
+      } else {
+        message.textContent = "Incorrect PIN. Try again.";
+      }
+    }
+  </script>
 </body>
 </html>
