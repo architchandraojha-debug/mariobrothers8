@@ -50,7 +50,7 @@
   <!-- Join Form Section -->
   <div class="section" id="join-form">
     <h2>Join Form</h2>
-    <iframe src="PASTE_YOUR_GOOGLE_FORM_RESPONDER_LINK_HERE"></iframe>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpMi44yInuVEbAFU31yfGXaAtXmN86HcckYGlDjDqZ1UXWhw/viewform?usp=header"></iframe>
   </div>
 
   <!-- PIN Section -->
@@ -69,6 +69,9 @@
       const validPins = ["TECHNOLOGIA"]; // ✅ Add your PINs here
 
       if (validPins.includes(pin)) {
+        // Hide join form and PIN section before redirect
+        document.getElementById("join-form").style.display = "none";
+        document.getElementById("pin-section").style.display = "none";
         message.textContent = "Access granted! Redirecting...";
         // Redirect to Notice Board page
         window.location.href = "notice.html";

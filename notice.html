@@ -38,29 +38,21 @@
     button {
       margin-top: 20px;
       padding: 10px 20px;
-      cursor: pointer;
       background: #c0392b;
       color: #fff;
       border: none;
       border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <!-- Top Heading -->
   <h1>Group Notice Board</h1>
 
-  <!-- Notice Board Section -->
   <div class="notice-board">
-    <div class="notice">
-      <strong>Admin Notice 1:</strong> Welcome new members! 🎉
-    </div>
-    <div class="notice">
-      <strong>Admin Notice 2:</strong> First group meetup on Saturday!
-    </div>
-    <div class="notice">
-      <strong>Admin Notice 3:</strong> Don’t forget to bring your ideas.
-    </div>
+    <div class="notice"><strong>Admin Notice 1:</strong> Welcome new members! 🎉</div>
+    <div class="notice"><strong>Admin Notice 2:</strong> First group meetup on Saturday!</div>
+    <div class="notice"><strong>Admin Notice 3:</strong> Don’t forget to bring your ideas.</div>
 
     <!-- Throw Out Member Button -->
     <button onclick="throwOutMember()">Throw Out Member</button>
@@ -69,7 +61,6 @@
   <script>
     function throwOutMember() {
       alert("Member has been thrown out! 🚪");
-      // Later you can replace this alert with actual logic
     }
   </script>
 </body>
